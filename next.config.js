@@ -1,12 +1,6 @@
-//next.config.js
 /* eslint-disable @typescript-eslint/no-require-imports */
-const withTM = require("next-transpile-modules")([
-  "@ffmpeg/ffmpeg",
-  "react-big-calendar",
-  "react-datepicker",
-  "react-image-crop",
-  "react-toastify",
-]);
+const withTM = require("next-transpile-modules")(["@ffmpeg/ffmpeg"]);
+
 module.exports = withTM({
   reactStrictMode: true,
   experimental: {
@@ -49,20 +43,10 @@ module.exports = withTM({
     ],
   },
   experimental: {},
-  webpack: (config) => {
-    // إضافة تحميل ملفات CSS
+  webpack: (config, {}) => {
+    // إضافة تحميل ملفات CSS باستخدام require.resolve
     config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            importLoaders: 1,
-            modules: false,
-          },
-        },
-      ],
+      test: /\.css$/i,
     });
 
     config.resolve.fallback = {
