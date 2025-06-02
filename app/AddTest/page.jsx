@@ -1,11 +1,11 @@
 'use client';
 import { Suspense } from 'react';
-import AddTestPage from '@/components/AddTestPage';
+import AddTestComponent from '@/components/AddTestPage';
 
 export default function AddTest() {
   return (
-    <Suspense fallback="جارٍ التحميل...">
-      <AddTestPage />
+    <Suspense fallback={<div className="text-center py-10">جارٍ التحميل...</div>}>
+      <AddTestComponent />
     </Suspense>
   );
 }

@@ -432,4 +432,4 @@ Authorization: `Bearer ${localStorage.getItem('jwt')}`,
   );
 };
 
-export default AddTest;
+export default AddTestPage;

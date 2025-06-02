@@ -7,12 +7,19 @@ import { useEffect } from 'react';
 import { checkAuth } from '../store/slices/authSlice';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../store/store';
-
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
       <ReduxWrapper>
-          <LayoutContent>{children}</LayoutContent>
+
+          <LayoutContent>
+    <div className="font-sans">
+
+            {children}
+                  </div>
+
+            </LayoutContent>
+
       </ReduxWrapper>
     </Provider>
   );

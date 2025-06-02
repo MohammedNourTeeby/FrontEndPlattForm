@@ -6,5 +6,5 @@ export const mockBrands = Array(3)
     id: faker.string.uuid(),
     logo: faker.image.urlLoremFlickr({ category: "abstract" }),
     primaryColor: faker.color.rgb(),
-    font: faker.helpers.arrayElement(["Inter", "Poppins", "Cairo"]),
+    font: faker.helpers.arrayElement(["Inter", "Poppins"]),
   }));

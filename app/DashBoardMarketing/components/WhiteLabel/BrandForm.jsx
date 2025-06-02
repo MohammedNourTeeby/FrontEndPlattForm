@@ -123,7 +123,6 @@ export default function BrandForm() {
           className="w-full p-3 border rounded-lg bg-white dark:bg-gray-800"
           {...register('font')}
         >
-          <option value="Cairo">Cairo</option>
           <option value="Tajawal">Tajawal</option>
           <option value="Inter">Inter</option>
           <option value="Poppins">Poppins</option>

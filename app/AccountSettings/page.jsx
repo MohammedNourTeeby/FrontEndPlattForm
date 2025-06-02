@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-const page = () => {
+const AccountSettings = () => {
   const [activeSection, setActiveSection] = useState('security');
   const [subSection, setSubSection] = useState('');
 
@@ -102,7 +102,7 @@ const page = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 font-sans" dir="rtl">
+    <div className="max-w-6xl mx-auto p-6" dir="rtl">
       {/* شريط التنقل الرئيسي */}
       <div className="flex gap-4 border-b-2 border-gray-200 pb-4 mb-6 overflow-x-auto">
         {Object.entries(sections).map(([key, section]) => (
@@ -218,4 +218,4 @@ const page = () => {
   }
 };
 
-export default page;
+export default AccountSettings;

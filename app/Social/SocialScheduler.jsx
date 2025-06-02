@@ -1,7 +1,7 @@
+//app/Social/SocialScheduler.jsx
 "use client";
 import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Facebook, 

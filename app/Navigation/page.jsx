@@ -4,7 +4,6 @@ import notificationsData from '../../notifications.json';
 import { FiBell, FiCheckCircle, FiClock } from 'react-icons/fi';
 
 const Page = () => {
-  // دالة لتهيئة الوقت المنقضي
   const getTimeAgo = (timestamp) => {
     const now = new Date();
     const diff = now - new Date(timestamp);
@@ -17,7 +16,7 @@ const Page = () => {
   };
 
   return (
-    <div className="p-4 md:p-6 lg:p-8 max-w-4xl mx-auto" dir="rtl">
+    <div className="font-sans" dir="rtl">
       <header className="flex items-center gap-3 mb-6">
         <FiBell className="text-2xl text-purple-600" />
         <h1 className="text-2xl font-bold text-gray-800">الإشعارات</h1>
@@ -37,7 +36,6 @@ const Page = () => {
                 className="p-4 hover:bg-gray-50 transition-colors group"
               >
                 <div className="flex items-start gap-3">
-                  {/* أيقونة الحالة */}
                   <div className={`p-2 rounded-full ${
                     notification.read ? 'bg-gray-100' : 'bg-purple-100'
                   }`}>
@@ -52,7 +50,6 @@ const Page = () => {
                     )}
                   </div>
 
-                  {/* محتوى الإشعار */}
                   <div className="flex-1">
                     <p className={`text-md ${
                       notification.read ? 'text-gray-600' : 'font-medium text-gray-800'
@@ -60,7 +57,6 @@ const Page = () => {
                       {notification.message}
                     </p>
                     
-                    {/* معلومات إضافية */}
                     <div className="flex items-center gap-2 mt-2">
                       <span className="text-xs text-gray-400">
                         {getTimeAgo(notification.timestamp)}
@@ -73,7 +69,6 @@ const Page = () => {
                     </div>
                   </div>
 
-                  {/* إجراءات سريعة */}
                   <button className="opacity-0 group-hover:opacity-100 transition-opacity text-gray-400 hover:text-purple-600">
                     <FiCheckCircle className="text-lg" />
                   </button>
