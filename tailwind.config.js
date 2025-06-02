@@ -15,8 +15,8 @@ module.exports = {
       }),
       screens: { md: "768px" },
       fontFamily: {
-        sans: ["var(--font-cairo)", "Arial", "sans-serif", "'Cairo'"],
-        cairo: ["'Cairo'", "Arial", "sans-serif"],
+        sans: ["var(--font-cairo)", "Arial", "sans-serif"],
+        cairo: ["var(--font-cairo)", "Arial", "sans-serif"],
         "din-next": ["DIN Next Arabic", "sans-serif"],
       },
       colors: {
@@ -28,6 +28,7 @@ module.exports = {
         ring: "var(--ring)", // تأكد من وجود هذا التعريف
 
         border: "var(--border)",
+        ring: "var(--ring)",
         background: "var(--background)",
         foreground: "var(--foreground)",
         "wave-primary": "#3B82F6",
