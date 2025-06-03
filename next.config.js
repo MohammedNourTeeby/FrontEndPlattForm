@@ -15,6 +15,7 @@ module.exports = withTM({
     legacyBrowsers: false,
     cpus: 4,
   },
+  transpilePackages: ["lucide-react"],
 
   typescript: {
     ignoreBuildErrors: true, // حل مؤقت لأخطاء TypeScript
@@ -48,7 +49,9 @@ module.exports = withTM({
       },
     ],
   },
-  experimental: {},
+  experimental: {
+    optimizeCss: false, // تعطيل تحسينات CSS
+  },
   webpack: (config) => {
     // إضافة تحميل ملفات CSS
     config.module.rules.push({
@@ -64,7 +67,16 @@ module.exports = withTM({
         },
       ],
     });
-
+    if (config.mode === "production") {
+      config.optimization.minimizer.forEach((plugin) => {
+        if (plugin.constructor.name === "CssMinimizerPlugin") {
+          plugin.options.minimizerOptions = {
+            ...plugin.options.minimizerOptions,
+            preset: ["default", { discardComments: { removeAll: true } }],
+          };
+        }
+      });
+    }
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
