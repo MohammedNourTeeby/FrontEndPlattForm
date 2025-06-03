@@ -10,7 +10,6 @@ const withTM = require("next-transpile-modules")([
 module.exports = withTM({
   reactStrictMode: true,
   experimental: {
-    optimizeCss: true,
     workerThreads: true,
     legacyBrowsers: false,
     cpus: 4,
@@ -28,6 +27,8 @@ module.exports = withTM({
     FFMPEG_CORE_PATH: "/ffmpeg.js",
   },
   images: {
+    domains: ["localhost", "amazing-cabbage-7632d69005.strapiapp.com"],
+
     remotePatterns: [
       {
         protocol: "http",

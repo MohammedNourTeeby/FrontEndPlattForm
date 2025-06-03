@@ -2,21 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-size: 16px;
-}
 
-@media (min-width: 768px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1200px) {
-  html {
-    font-size: 20px;
-  }
-}
 
 /* استخدم وحدات rem بدلاً من px */
 .button {
@@ -73,6 +59,14 @@ html {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+   --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 body {
@@ -82,16 +76,6 @@ body {
 }
 
 @layer base {
-  :root {
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 
   .dark {
     --sidebar-background: 240 5.9% 10%;
