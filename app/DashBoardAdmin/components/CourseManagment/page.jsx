@@ -37,7 +37,7 @@ export default function CoursesPage() {
 
   const handleDelete = async (courseId) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/courses/${courseId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/courses/${courseId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('jwt')}`,

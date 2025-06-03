@@ -16,11 +16,11 @@ export async function PUT(request, { params }) {
     };
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/courses/${id}`,
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/courses/${id}`,
       {
         method: "PUT",
         headers: {
-          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ data: updateData }),
@@ -73,11 +73,11 @@ export async function DELETE(request, { params }) {
   try {
     const { id } = params;
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/courses/${id}`,
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/courses/${id}`,
       {
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
           "Content-Type": "application/json",
         },
       }

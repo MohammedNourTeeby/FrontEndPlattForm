@@ -17,7 +17,6 @@ const FacebookProvider = ({ children }) => {
 
     window.fbAsyncInit = () => {
       window.FB.init({
-        appId: process.env.NEXT_PUBLIC_META_APP_ID,
         cookie: true,
         xfbml: true,
         version: 'v18.0'
